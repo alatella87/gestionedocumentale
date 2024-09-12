@@ -1,0 +1,403 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+// import Features2 from '~/components/widgets/Features2.astro';
+// import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+// import CallToAction from '~/components/widgets/CallToAction.astro';
+import logo from '~/assets/images/dpstudio.png';
+
+const metadata = {
+  title: 'gestionedocumentale.ch — beta',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Digitalizza con noi',
+        href: 'https://github.com/onwidget/astrowind',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'Scopri funzionalità', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/digitalizza.webp', alt: 'Digitalizzazione aziende ticino' }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight tracking-normal">
+        Digitalizza adesso tutti i processi aziendali</span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">gestionedocumentale.ch</span> è il portale di riferimento in Ticino per la digitalizzazione
+        delle imprese.</span
+      >
+      <!-- <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> -->
+      Per tutte le PMI Ticinesi: Startup, PMI, Scale-ups.
+    </Fragment>
+  </Hero>
+
+  <div
+    class="mb-12"
+    style="display: flex; flex-direction: column; justify-content: center; text-align: center; align-items: center"
+  >
+    <div>
+      <span class="ml-6">Powered by</span>
+      <Image width={180} src={logo} alt="Powered by DPStudio" />
+    </div>
+  </div>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Funzionalità"
+    title="Digitalizza tutti i processi aziendali"
+    items={[
+      {
+        title: 'Archiviazione',
+        description:
+          'Con la Suite ELO ECM, hai la possibilità di archiviare e gestire centralmente i documenti aziendali. Le funzionalità avanzate, come la crittografia e il controllo delle versioni, garantiscono la protezione costante dei tuoi dati.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'Gestione documenti',
+        description:
+          'Grazie a ELO, la gestione dei documenti diventa semplice. Ogni fase dei processi operativi viene monitorata con trasparenza, assicurando un flusso di lavoro efficiente e privo di duplicazioni.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Automatizzazione dei processi',
+        description:
+          'Con ELO, puoi automatizzare il workflow aziendale in modo intuitivo e personalizzato, adattandolo alle tue esigenze. Questo ti permette di risparmiare tempo e minimizzare gli errori.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Analisi dei dati',
+        description:
+          'Con ELO Analytics, puoi estrarre preziosi insights dai tuoi dati aziendali. Grazie a dashboard e grafici personalizzabili, visualizzi le informazioni in modo chiaro e significativo.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Collaborazione',
+        description:
+          'La Suite ELO ECM rende la collaborazione tra i dipartimenti più facile e diretta. Puoi condividere documenti e informazioni, coordinando le attività in modo efficiente.',
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'Tecnologia',
+        description:
+          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Invoice - Contract - HR"
+    title="Business solutions di ELO"
+    items={[
+      {
+        title: 'ELO Invoice (Fatture)',
+        description:
+          "ELO Invoice ti permette di gestire l'intero processo di elaborazione delle fatture in arrivo, dalla ricezione all'approvazione del pagamento. Con ELO Invoice, ottimizzi e acceleri significativamente la gestione delle fatture, anche se la tua azienda opera in più sedi.",
+      },
+      {
+        title: 'ELO Contract (contratti aziendali)',
+        description:
+          "Con ELO Contract, avrai sempre sotto controllo tutti i tuoi contratti aziendali, inclusi termini, durate, clausole e scadenze. Non dovrai più preoccuparti di dimenticare scadenze cruciali o termini di disdetta e rinnovo, permettendoti di concentrarti sulle tue attività operative. Gestisci i contratti in modo efficace con ELO!'",
+      },
+      {
+        title: 'ELO HR Personnel file',
+        description:
+          'Non è più necessario gestire voluminosi dossier cartacei dei collaboratori. Con ELO HR Personnel File, tutto, dai certificati medici ai documenti per il congedo parentale e le comunicazioni pensionistiche, viene digitalizzato e conservato in sicurezza in un unico luogo. Questo sistema assicura la protezione dei dati sensibili dei dipendenti e garantisce la conformità con le normative sulla privacy.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Costruito su fondamenta moderne
+      </h3>
+      Snellisci la tua amministrazione con le soluzioni ELO.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    isAfterContent
+    items={[
+      {
+        title: 'High level of customization',
+        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
+      },
+      {
+        title: 'Multiple layout possibilities',
+        description:
+          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
+      },
+      {
+        title: 'Fully responsive design',
+        description:
+          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
+      },
+      {
+        title: 'Integration of media',
+        description:
+          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Enhanced user engagement',
+        description:
+          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
+      },
+      {
+        title: 'Continuous improvement',
+        description:
+          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
+      },
+      {
+        title: 'Time and resource efficiency',
+        description:
+          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
+      },
+      {
+        title: 'Community support',
+        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Steps Widget ****************** -->
+
+  <!-- <Steps
+    title="Get your dream website up and running in no time with AstroWind."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Download</span>',
+        description:
+          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Add content</span>',
+        description:
+          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        description:
+          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Ready!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  /> -->
+
+  <!-- Features2 Widget ************** -->
+
+  <!-- <Features2
+    title="Most used widgets"
+    subtitle="Provides frequently used components for building websites using Tailwind CSS"
+    tagline="Components"
+    items={[
+      {
+        title: 'Headers',
+        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Heros',
+        description:
+          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Features',
+        description:
+          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Content',
+        description:
+          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Call-to-Action',
+        description:
+          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'Pricing',
+        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'Testimonial',
+        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'Contact',
+        description:
+          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'Footers',
+        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
+        icon: 'flat-color-icons:database',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2> -->
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts title="Queste aziende ce l'hanno fatta." />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Domande frequenti"
+    subtitle="Scopri ciò che l'esperienza ci ha permesso di imparare grazie alla gestione digitale della documentazione"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: "Come ridurre i costi e migliorare l efficienza?",
+        description:
+          "Digitalizzare l'azienda aiuta a ridurre significativamente i costi associati alla gestione dei documenti cartacei, come stampa, archiviazione e smaltimento. Inoltre, l'accesso e la gestione elettronica dei documenti migliorano l'efficienza operativa, velocizzando le operazioni quotidiane e riducendo il tempo speso nella ricerca di informazioni, con conseguente aumento della produttività complessiva.",
+      },
+      {
+        title: 'Si può raggiungere facilmente una conformità normativa?',
+        description:
+          "La digitalizzazione aiuta a garantire la conformità con le normative e i requisiti legali, come quelli sulla protezione dei dati e sulla gestione delle informazioni. I sistemi digitali facilitano la tracciabilità e la gestione dei documenti, assicurando che tutte le pratiche siano in linea con le normative vigenti e semplificando le attività di audit e controllo.",
+      },
+      {
+        title: 'Come accedere ai dati da qualsiasi luogo?',
+        description:
+          "Con la digitalizzazione, i documenti e le informazioni aziendali diventano accessibili da qualsiasi luogo e in qualsiasi momento, a condizione di avere una connessione internet. Questo migliora la flessibilità e la mobilità dei dipendenti, consentendo loro di lavorare da remoto o in viaggio, e facilita il recupero delle informazioni senza dover gestire file fisici.",
+      },
+      {
+        title: 'È possibile migliorare ancora di più la sicurezza?',
+        description:
+          "La digitalizzazione dei dati aziendali consente di implementare sistemi di sicurezza avanzati, come crittografia e controlli di accesso, che proteggono le informazioni sensibili da accessi non autorizzati e perdite. Inoltre, i backup regolari e le misure di recupero dei dati garantiscono una protezione maggiore rispetto ai documenti cartacei, riducendo il rischio di danni o smarrimenti.",
+      },
+      {
+        title: 'Come facilitare la collaborazione?',
+        description:
+          "La digitalizzazione facilita la condivisione e la collaborazione sui documenti e le informazioni tra i membri del team. Le piattaforme digitali permettono di lavorare su file condivisi in tempo reale, commentare e apportare modifiche simultaneamente, migliorando la comunicazione e coordinamento tra i dipartimenti e aumentando l'efficacia dei progetti collaborativi.",
+      },
+      {
+        title: 'Come si automatizzano i processi ripetitivi?',
+        description:
+          " Implementare soluzioni digitali automatizza i processi ripetitivi e manuali, come l'elaborazione delle fatture o la gestione dei documenti, riducendo il carico di lavoro umano. Questo non solo accelera i processi aziendali, ma riduce anche il rischio di errori umani, migliorando la precisione e l'affidabilità delle operazioni quotidiane.",
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Licenze ELO', amount: '250' },
+      { title: 'Utenti', amount: '1090' },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <!-- <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get template',
+        href: 'https://github.com/onwidget/astrowind',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
+      waste more time! :P
+    </Fragment>
+  </CallToAction> -->
+</Layout>
